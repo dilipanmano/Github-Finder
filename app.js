@@ -9,6 +9,8 @@ userId.addEventListener("keyup", (e) => {
         github.getProfile(e.target.value).then((data) => {
             if (data.profileData.message === "Not Found") {
                 // no user found
+                ui.clearAlert();
+                ui.showAlert("No Record Found", "alert alert-danger");
             } else {
                 // display ui profile
                 ui.renderProfile(data.profileData);

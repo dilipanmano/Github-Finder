@@ -4,7 +4,7 @@ class UI {
     }
 
     renderProfile(user) {
-        console.log(user);
+        //console.log(user);
         this.profile.innerHTML = `
         <div class="card card-body mb-3">
         <div class="row">
@@ -34,5 +34,25 @@ class UI {
 
     clearProfile() {
         this.profile.innerHTML = "";
+    }
+
+    showAlert(message, className) {
+        //this.clearAlert();
+        const contain = document.querySelector(".searchContainer");
+        const search = document.querySelector(".search");
+        const newAlert = document.createElement("div");
+        newAlert.className = className;
+        newAlert.appendChild(document.createTextNode(message));
+        contain.insertBefore(newAlert, search);
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000);
+    }
+
+    clearAlert() {
+        const alert = document.querySelector(".alert");
+        if (alert) {
+            alert.remove();
+        }
     }
 }
