@@ -16,5 +16,6 @@ userId.addEventListener("keyup", (e) => {
         });
     } else {
         //clear prfile
+        ui.clearProfile();
     }
 });
