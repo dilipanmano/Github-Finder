@@ -14,6 +14,7 @@ userId.addEventListener("keyup", (e) => {
             } else {
                 // display ui profile
                 ui.renderProfile(data.profileData);
+                ui.renderRepos(data.profileRepos);
             }
         });
     } else {
